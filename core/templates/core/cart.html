@@ -1,0 +1,14 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <h2>Cart</h2>
+    <ul>
+        {% for item in cart_items %}
+            <img src="{{item.item.image.url}}" height="100" width="100" />
+            <li>{{ item.item.name }} - {{ item.quantity }}</li>
+            <br />
+        {% empty %}
+            <li>Your cart is empty.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
